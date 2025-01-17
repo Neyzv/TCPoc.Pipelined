@@ -4,7 +4,7 @@ An optimized TCP server / client in NET 8 with System.IO.Pipelines, which is the
 ## How to use
 To begin you'll need to implement a `IMessageEncoder<TMessage>` which will convert your `TMessage` into its binary representation. \
 \
-Then you'll need to implement a `IMessageDecoder<TMessage>` which will do the opposit job of the `IMessageEncoder<TMessage>`. \
+Then you'll need to implement a `IMessageDecoder<TMessage>` which will do the opposit job of the `IMessageEncoder<TMessage>`, you'll have to resize the buffer with only the remaining unread bytes. \
 \
 To finish you must implement the `IMessageDispatcher<TMessage>` who aims to dispatch the received message to the wright handler to achieve the appropriate action. \
 ### Server
