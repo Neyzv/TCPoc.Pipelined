@@ -152,6 +152,7 @@ public abstract class SocketListener<TMessage>
             _socket.Close();
 
             _socket.Dispose();
+            _semaphore.Dispose();
             _cts.Dispose();
 
             GC.SuppressFinalize(this);
